@@ -1,0 +1,61 @@
+ <!-- <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="start stretch">
+  <div *ngFor="let widget of Configs"
+        [fxFlex]="{ '0 1 calc(33.333% - 16px)': true }" 
+        fxFlex.xs="100%"
+       fxLayoutAlign="center center"
+       [ngStyle]="{ 'grid-row': 'span ' + widget.size.rows, 'grid-column': 'span ' + widget.size.cols }"> 
+    <div class="widget" fxLayout="column" fxLayoutAlign="center center">
+      <p-chart *ngIf="widget.chartType === 'bar'" type="bar" [data]="widget.data"></p-chart>
+      <p-chart *ngIf="widget.chartType === 'pie'" type="pie" [data]="widget.data"></p-chart>
+      <p-chart *ngIf="widget.chartType === 'line'" type="line" [data]="widget.data"></p-chart>
+    </div>
+  </div>
+</div>  -->
+
+<!-- chart.component.html -->
+
+<!-- dashboard.component.html -->
+
+
+
+
+
+
+ <!-- <div class="dashboard-grid">
+  <div *ngFor="let widget of dashboardConfig"
+    [ngStyle]="{ 'grid-area': getGridArea(widget.position.row, widget.position.col, widget.size.rows, widget.size.cols) }"
+       class="widget">
+    <div *ngIf="widget.isLoading" class="loading">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="!widget.isLoading">
+      <p-chart *ngIf="widget.chartType === 'bar'" type="bar" [data]="widget.data"></p-chart>
+      <p-chart *ngIf="widget.chartType === 'pie'" type="pie" [data]="widget.data"></p-chart>
+      <p-chart *ngIf="widget.chartType === 'line'" type="line" [data]="widget.data"></p-chart>
+    </div>
+  </div>
+</div>  -->
+
+<!-- dashboard.component.html -->
+<div fxLayout="row wrap" fxLayoutGap="16px">
+  <div *ngFor="let chart of charts" [fxFlex]="{ '0 1 calc(33.333% - 16px)': true }" fxFlex.xs="100%" fxLayout="column" fxLayoutAlign="center center">
+    <h2>{{ chart.chartType | titlecase }} Chart</h2>
+    
+    <p-chart *ngIf="chart.chartType === 'pie'" type="pie" [data]="getChartData(chart)"></p-chart>
+
+    <p-chart *ngIf="chart.chartType === 'bar'" type="bar" [data]="getChartData(chart)"></p-chart>
+
+    <p-chart *ngIf="chart.chartType === 'line'" type="line" [data]="getChartData(chart)"></p-chart>
+
+    <p-chart *ngIf="chart.chartType === 'doughnut'" type="doughnut" [data]="getChartData(chart)"></p-chart>
+  
+  <!-- Displaying label for each dataset -->
+  <div *ngFor="let dataset of chart.data.datasets">
+    <p>{{ dataset.labels }}</p>
+  </div>
+</div>
+
+
+
+
+

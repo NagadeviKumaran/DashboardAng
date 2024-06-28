@@ -1,0 +1,40 @@
+/* component.css */
+
+/* Style for the container div */
+/* component.css */
+
+/* Style for the container div */
+/* component.css */
+
+/* Style for the container div */
+/* dashboard.component.css */
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust columns dynamically based on available space */
+  grid-auto-rows: 300px; /* Adjust row height as per your design */
+  gap: 20px; /* Gap between grid items */
+  justify-items: center; /* Center items horizontally */
+  margin-top: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.chart-item {
+  display: inline-block; /* Ensure each chart item is displayed inline */
+  width: 300px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust height as needed */
+}
